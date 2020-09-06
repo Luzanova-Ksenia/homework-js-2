@@ -63,7 +63,6 @@ const LEGAL_AGE = 18; // don't change this
  * 
  * tip: use .filter method
  */
-
 function getLegalAgePeople(arr, ageParamName) {
     // WRITE CODE HERE
     const olds = arr.filter(person => person.age >= LEGAL_AGE);
@@ -81,10 +80,10 @@ function getLegalAgePeople(arr, ageParamName) {
  * 
  * tip: use .filter method or for()
 */
-
 function getPeopleWhoHaveMoneyForAlcohol(arr) {
     // WRITE CODE HERE
 	const enoughMoney = [];
+	
     for (let i = 0; i < arr.length; i++) {
         if (arr[i].moneyAmount>= (alcoholPriceForOneItem[arr[i].desiredAlcoholName] * arr[i].desiredAlcoholAmount)){    
             enoughMoney.push(arr[i]);
@@ -109,18 +108,16 @@ function getPeopleWhoHaveMoneyForAlcohol(arr) {
 function buyAlcohol(arr) {
     // WRITE CODE HERE
 	//let sum = arr.desiredAlcoholAmount * alcoholPriceForOneItem[arr.desiredAlcoholName]
-	console.log(arr.desiredAlcoholAmount)
-	const allInfo = arr.map(person =>{
-		return '${arr.name} bought ${desiredAlcoholAmount} bottles of ${arr.desiredAlcoholName} for rubles'
-	})
+	//console.log(arr.desiredAlcoholAmount)
+	const allInfo = arr.map(who => `${who.name} bought ${who.desiredAlcoholAmount} bottles of ${who.desiredAlcoholName} for ${who.desiredAlcoholAmount * alcoholPriceForOneItem[who.desiredAlcoholName]} rubles`)
+	return allInfo
 }
 
-
-console.log(buyAlcohol(people));
-
+//console.log(buyAlcohol(people));
 
 
-/**
+
+
 // TEST FUNCTION. PLS DON'T TOUCH
 function check() {
     try {
@@ -153,4 +150,3 @@ function check() {
     } catch (err) {
         alert(err);
     }
-*/
