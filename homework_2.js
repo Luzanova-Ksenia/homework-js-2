@@ -82,7 +82,7 @@ function getLegalAgePeople(arr, ageParamName) {
 */
 function getPeopleWhoHaveMoneyForAlcohol(arr) {
     // WRITE CODE HERE
-	const enoughMoney = [];
+    const enoughMoney = [];
 	
     for (let i = 0; i < arr.length; i++) {
         if (arr[i].moneyAmount>= (alcoholPriceForOneItem[arr[i].desiredAlcoholName] * arr[i].desiredAlcoholAmount)){    
@@ -107,15 +107,13 @@ function getPeopleWhoHaveMoneyForAlcohol(arr) {
 
 function buyAlcohol(arr) {
     // WRITE CODE HERE
-	//let sum = arr.desiredAlcoholAmount * alcoholPriceForOneItem[arr.desiredAlcoholName]
-	//console.log(arr.desiredAlcoholAmount)
-	const allInfo = arr.map(who => `${who.name} bought ${who.desiredAlcoholAmount} bottles of ${who.desiredAlcoholName} for ${who.desiredAlcoholAmount * alcoholPriceForOneItem[who.desiredAlcoholName]} rubles`)
-	return allInfo
+    //let sum = arr.desiredAlcoholAmount * alcoholPriceForOneItem[arr.desiredAlcoholName]
+    //console.log(arr.desiredAlcoholAmount)
+    const allInfo = arr.map(who => `${who.name} bought ${who.desiredAlcoholAmount} bottles of ${who.desiredAlcoholName} for ${who.desiredAlcoholAmount * alcoholPriceForOneItem[who.desiredAlcoholName]} rubles`)
+    return allInfo
 }
 
 //console.log(buyAlcohol(people));
-
-
 
 
 // TEST FUNCTION. PLS DON'T TOUCH
